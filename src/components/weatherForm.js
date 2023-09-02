@@ -10,7 +10,8 @@ export default function WeatherForm ({onChangeCity}) {
     
       function handleSubmit(e) {
         e.preventDefault();
-        if (!city || city !== "London") {
+        
+        if (!city || city !== '') {
           onChangeCity(city);
         }
       }
@@ -24,8 +25,7 @@ export default function WeatherForm ({onChangeCity}) {
         type="text"
         value={city}
         onChange={HandleChange}
-        >
-        </input>
+        />
     </form>
 
 );
