@@ -1,33 +1,30 @@
 import { useState } from "react";
 
-export default function WeatherForm ({onChangeCity}) {
+import styles from "./weatherApp.module.css";
 
-    const [city, setCity] = useState("");
+export default function WeatherForm({ onChangeCity }) {
+  const [city, setCity] = useState("");
 
-    function HandleChange(e) {
-        setCity(e.target.value);
-      }
-    
-      function handleSubmit(e) {
-        e.preventDefault();
-        
-        if (!city || city !== '') {
-          onChangeCity(city);
-        }
-      }
+  function HandleChange(e) {
+    setCity(e.target.value);
+  }
 
+  function handleSubmit(e) {
+    e.preventDefault();
 
+    if (!city || city !== "") {
+      onChangeCity(city);
+    }
+  }
 
-    return (
-    
-    <form onSubmit={handleSubmit}> 
-        <input 
+  return (
+    <form onSubmit={handleSubmit} className={styles.container}>
+      <input
+        className={styles.input}
         type="text"
         value={city}
         onChange={HandleChange}
-        />
+      />
     </form>
-
-);
-
+  );
 }
