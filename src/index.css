@@ -5,8 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(https://img.freepik.com/foto-gratis/primer-plano-playa-lissa-santa-pola-espana_181624-49311.jpg?w=996&t=st=1694041337~exp=1694041937~hmac=d130e0362fb5da2d66329565b65fcab01dc2a0aaa99460327a6c3dfa3943ac04);
-  background-size: 105%;
+ background-color: goldenrod;
 }
 
 code {

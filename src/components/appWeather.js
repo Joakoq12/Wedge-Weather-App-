@@ -1,5 +1,6 @@
 import WeatherMainInfo from "./WeatherMainInfo";
 import WeatherForm from "./weatherForm";
+import Loading from "./loading";
 
 import { useEffect, useState } from "react";
 
@@ -40,6 +41,11 @@ export default function WeatherApp() {
 
       const json = await request.json();
 
+
+      setTimeout( () =>{
+        setWeather(json);
+      }, 2000)
+
       setWeather(json);
 
       console.log(json);
@@ -54,7 +60,7 @@ export default function WeatherApp() {
   return (
     <div className={styles.weatherContainer}>
       <WeatherForm onChangeCity={handleOnChangeCity} />
-      <WeatherMainInfo weather={weather}/>
+      {weather ? <WeatherMainInfo weather={weather} /> : <Loading />}
     </div>
   );
 }
